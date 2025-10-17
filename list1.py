@@ -38,7 +38,27 @@ def match_ends(words):
 # before combining them.
 def front_x(words):
   # +++your code here+++
-  return
+  x_list = []
+  main_list = []
+  for l in words:
+
+    if l.startswith('x'):
+      main_list.append(l)
+    else:
+      x_list.append(l)
+
+  def bubble_sort(lst):
+      n = len(lst)
+      for i in range(n):
+        for j in range(0, n - i - 1):
+          if lst[j] > lst[j + 1]:
+            lst[j], lst[j + 1] = lst[j + 1], lst[j]
+      return lst
+
+  main_sorted = bubble_sort(main_list)
+  x_sorted = bubble_sort(x_list)
+
+  return main_sorted + x_sorted
 
 
 
